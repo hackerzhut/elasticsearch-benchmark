@@ -1,0 +1,15 @@
+{
+  "first_four_11_05_2018_13234": {
+    "mappings": {
+      "first_four": {
+        "properties": {
+          "approx": { "type": "float" },
+          "sel1": { "type": "long" },
+          "sel2": { "type": "long" },
+          "sel3": { "type": "long" },
+          "sel4": { "type": "long" }
+        }
+      }
+    }
+  }
+}

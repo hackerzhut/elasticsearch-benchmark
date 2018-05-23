@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "description": "Benchmark for Approximates",
+  "indices": [
+    {
+      "name": "approximates",
+      "body": "index.json",
+      "types": ["first_four_11_05_2018_13234"]
+    }
+  ],
+  "corpora": [
+    {
+      "name": "approximates-benchmark",
+      "documents": [
+        {
+          "source-file": "documents.json",
+          "document-count": 360,
+          "uncompressed-bytes": 52966
+        }
+      ]
+    }
+  ],
+  "challenges": [ {% include "challenges/index-and-query.json" %} ]
+}

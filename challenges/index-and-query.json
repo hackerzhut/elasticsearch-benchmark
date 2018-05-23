@@ -1,0 +1,48 @@
+{
+  "name": "index-and-query",
+  "default": true,
+  "schedule": [
+    {
+      "operation": {
+        "operation-type": "delete-index"
+      }
+    },
+    {
+      "operation": {
+        "operation-type": "create-index"
+      }
+    },
+    {
+      "operation": {
+        "operation-type": "cluster-health",
+        "request-params": {
+          "wait_for_status": "green"
+        }
+      }
+    },
+    {
+      "operation": {
+        "operation-type": "bulk",
+        "bulk-size": 5000
+      },
+      "warmup-time-period": 120,
+      "clients": 8
+    },
+    {
+      "operation": {
+        "operation-type": "force-merge"
+      }
+    },
+    {
+      "operation": {
+        "name": "approximates-query",
+        "operation-type": "search",
+        "param-source": "approximates-track"
+      },
+      "clients": 100,
+      "warmup-iterations": 1000,
+      "iterations": 8000,
+      "target-throughput": 2000
+    }
+  ]
+}

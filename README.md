@@ -12,5 +12,5 @@ docker build -t image_name .
 ## Run Rally
 
 ```bash
-docker run --ulimit nofile=1000000:1000000 -it -e VERSION=5.6.3 image_name:latest
+docker run --ulimit nofile=1000000:1000000 -it -e --target-hosts='https://10.39.34.185/' image_name:latest
 ```

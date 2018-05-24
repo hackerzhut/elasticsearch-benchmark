@@ -1,11 +1,7 @@
 FROM openjdk:10-jdk
 
-ENV ES_END_POINT=""
-ENV PIPELINE="--pipeline=benchmark-only"
-ENV CREDENTIALS=""
-ENV CLUSTERHEALTH=""
-ENV REPORTFMT="markdown"
-ENV VERSION="6.2"
+# Default
+ENV ES_END_POINT="https://10.39.34.186/"
 
 RUN apt-get update
 RUN apt-get install --yes git gcc python3-pip python3-dev \
@@ -20,4 +16,4 @@ RUN chmod 755 /es-tracks
 USER elasticsearch
 
 
-CMD esrally configure; esrally $PIPELINE --target-hosts=$ES_END_POINT --preserve-install true --track-path=.
+CMD esrally configure; esrally --pipeline=benchmark-only --target-hosts=$ES_END_POINT --preserve-install true --track-path=.
